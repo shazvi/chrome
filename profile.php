@@ -30,7 +30,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             }
             else
             {
-                $jsonarray = json_decode(file_get_contents($_POST["link"]),true);
+                $jsonarray = json_decode(preg_replace('/[\x00-\x1F\x80-\xFF]/', '', file_get_contents($_POST["link"])),true);
                 if(!array_key_exists("roots", $jsonarray))
                 {
                     apologize("Link doesn't contain bookmarks data.");
