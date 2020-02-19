@@ -6,6 +6,7 @@ $user = query("select * from users where id = ?", $_SESSION["id"]);
 if(!empty($user[0]["link"])){
     // Get bookmarks
     $jsonarray = json_decode(preg_replace('/[\x00-\x1F\x80-\xFF]/', '', file_get_contents($user[0]["link"])),true);
+    // $jsonarray = json_decode(preg_replace('/[\x00-\x1F\x80-\xFF]/', '', file_get_contents('./Bookmarks')),true);
     $bookmarks = $jsonarray["roots"]["bookmark_bar"]["children"];
 
     function traverse($folder, $name) {
