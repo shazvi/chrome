@@ -14,16 +14,16 @@
     <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <!-- <link href="css/nav.css" rel="stylesheet"> -->
-    <?php if($_SERVER["PHP_SELF"]=="/index.php"):?>
+    <?php if($_SERVER["PHP_SELF"]=="/index.php"): ?>
         <link rel="stylesheet" href="css/easyTree.css">
         <script type="text/javascript" src="js/easyTree.js"></script>
         <script type="text/javascript" src="js/jquery.highlight-upd.js"></script>
-    <?endif?>
+    <?php endif ?>
 </head>
 <body <?php if($_SERVER["PHP_SELF"]=="/index.php")//echo'style="padding-top: 70px;"';?>>
 <div class="container">
-    <?php if($_SERVER["PHP_SELF"]!="/index.php"):?>
-    <div class="page-header">
-        <h1><?=isset($title)?$title:"";?> <small> Access your chrome bookmarks anywhere</small></h1>
-    </div>
-    <?endif?>
+    <?php if($_SERVER["PHP_SELF"]!="/index.php"): ?>
+        <div class="page-header">
+            <h1><?=isset($title)?$title:"";?> <small> Access your chrome bookmarks anywhere</small></h1>
+        </div>
+    <?php endif ?>
